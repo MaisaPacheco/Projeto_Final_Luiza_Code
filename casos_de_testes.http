@@ -1,0 +1,17 @@
+GET http://127.0.0.1:8000/users/ HTTP/1.1
+Content-Type: application/json
+
+### 
+POST http://127.0.0.1:8000/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "testando@gmail.com",
+    "password": "102030"
+
+}
+
+###
+GET http://127.0.0.1:8000/users/632b7333477a6f1e3ca0d687/ HTTP/1.1
+Content-Type: application/json
+
