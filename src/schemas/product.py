@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from bson.objectid import ObjectId
 
 
 class ProductSchema(BaseModel):
@@ -7,3 +8,17 @@ class ProductSchema(BaseModel):
     price: float
     image: str
     code: int 
+
+    class Config:
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+        allow_population_by_field_name = True
+        schema_extra = {
+            "example": {
+                "name": "Book Alice in the wonderland",
+                "description": "It details the story of a young girl named Alice who falls through a rabbit hole into a fantasy world of anthropomorphic creatures",
+                "price": 569.9,
+                "image": "http://127.0.0.1:8000/produto/aliceinthewordeland.png",
+                "code": 123456789
+            }
+        }

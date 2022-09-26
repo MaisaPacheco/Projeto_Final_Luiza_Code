@@ -1,6 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, Field
 from pydantic.networks import EmailStr
+from bson.objectid import ObjectId
 from src.utils.pydantic_objectId import PyObjectId
 
 
@@ -10,6 +11,10 @@ class UserSchema(BaseModel):
     password: str
     is_active: bool = Field(default=True)
     is_admin: bool = Field(default=False)
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True  # required for the _id
+        json_encoders = {ObjectId: str}
 
 class UserUpdate(BaseModel):
     email: Optional[EmailStr]
