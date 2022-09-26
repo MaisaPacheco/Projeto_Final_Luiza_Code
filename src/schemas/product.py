@@ -1,8 +1,11 @@
 from pydantic import BaseModel, Field
+from bson import ObjectId
 from bson.objectid import ObjectId
+from src.utils.pydantic_objectId import PyObjectId
 
 
 class ProductSchema(BaseModel):
+    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     name: str = Field(max_length=100)
     description: str
     price: float
