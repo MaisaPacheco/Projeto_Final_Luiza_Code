@@ -1,12 +1,10 @@
 from fastapi.encoders import jsonable_encoder
-from bson import ObjectId
-from bson import json_util
-import json
 
 
 async def create_product(products_collection, product):
+    data = jsonable_encoder(product)
     try:
-        product = await products_collection.insert_one(product)
+        product = await products_collection.insert_one(data)
 
         if product.inserted_id:
             product = await get_product(products_collection, product.inserted_id)

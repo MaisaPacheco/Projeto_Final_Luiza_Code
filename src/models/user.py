@@ -1,4 +1,3 @@
-
 async def create_user(users_collection, user):
     try:
         user = await users_collection.insert_one(user)
@@ -9,14 +8,16 @@ async def create_user(users_collection, user):
 
     except Exception as e:
         print(f'create_user.error: {e}')
+ 
 
 async def get_user(users_collection, user_id):
     try:
-        data = await users_collection.find_one({'_id': user_id})
+        data = await users_collection.find_one(user_id)
         if data:
             return data
     except Exception as e:
         print(f'get_user.error: {e}')
+ 
 
 async def get_users(users_collection, skip, limit):
     try:
@@ -27,9 +28,11 @@ async def get_users(users_collection, skip, limit):
     except Exception as e:
         print(f'get_users.error: {e}')
 
+
 async def get_user_by_email(users_collection, email):
     user = await users_collection.find_one({'email': email})
     return user
+
 
 async def update_user(users_collection, user_id, user_data):
     try:
@@ -46,6 +49,7 @@ async def update_user(users_collection, user_id, user_data):
         return False, 0
     except Exception as e:
         print(f'update_user.error: {e}')
+
 
 async def delete_user(users_collection, user_id):
     try:
