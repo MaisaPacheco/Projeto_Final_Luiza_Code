@@ -1,0 +1,32 @@
+
+
+## creating a cart associated with the user, passing id_usuario
+POST http://127.0.0.1:8000/cart/632b768a78d2d3fcd54dee2a HTTP/1.1
+Content-Type: application/json
+
+
+
+
+
+###
+### adding product to the cart, passing as parameter the cart id and the product in the body
+POST http://127.0.0.1:8000/cart_item/6330c79f9ef30463d925f5b6
+
+{
+
+  "_id": "632dfbb1b923fd96b1b9ffc6",
+  "name": "Book Alice testing",
+  "description": "It details the story of a young girl named Alice ",
+  "price": 59.9,
+  "image": "http://127.0.0.1:8000/produto/aliceinthewordeland2.png",
+  "code": 123456789
+
+}
+
+
+### delete the cart passing as a parameter a cart id
+DELETE HTTP://127.0.0.1:8000/cart/632ff48a44b79aa1ca93af81
+Content-Type: application/json
+
+
+

@@ -1,0 +1,27 @@
+### creating a address passing user id as parameter 
+PUT http://127.0.0.1:8000/address/632b768a78d2d3fcd54dee2a HTTP/1.1
+Content-Type: application/json
+
+[
+{
+
+    "street": "i dont ",
+    "zipcode": "9999-030",
+    "district": "Grass Lands",
+    "city": "stark tower",
+    "state": "Parallel Universe", 
+    "is_delivery": true
+                        
+},
+
+{
+
+    "street": "iddk",
+    "zipcode": "9899-080",
+    "district": "Grass Lands",
+    "city": "stark tower",
+    "state": "Parallel Universe", 
+    "is_delivery": true
+                        
+}
+]

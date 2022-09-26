@@ -1,0 +1,43 @@
+### get all users
+GET http://127.0.0.1:8000/users/ HTTP/1.1
+Content-Type: application/json
+
+
+### create a user
+POST http://127.0.0.1:8000/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "testando@gmail.com",
+    "password": "102030"
+
+}
+
+### get user by id
+GET http://127.0.0.1:8000/users/632b768a78d2d3fcd54dee2a HTTP/1.1
+Content-Type: application/json
+
+
+### delete user by id
+DELETE HTTP://127.0.0.1:8000/users/632b7333477a6f1e3ca0d687
+
+### create a product
+POST http://127.0.0.1:8000/products/ HTTP/1.1
+Content-Type: application/json
+
+{ 
+  "name": "Book Alice testing",
+  "description": "It details the story of a young girl named Alice ",
+  "price": 589.9,
+  "image": "http://127.0.0.1:8000/produto/aliceinthewordeland2.png",
+  "code": 123456789
+}
+
+### delete product
+DELETE HTTP://127.0.0.1:8000/products/632e0093682f736b952f9d84 HTTP/1.1
+Content-Type: application/json
+
+### get product by id of the product
+GET http://127.0.0.1:8000/products/632f874ddebace61f558ed50 HTTP/1.1
+Content-Type: application/json
+
