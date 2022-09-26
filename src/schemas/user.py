@@ -11,6 +11,10 @@ class UserSchema(BaseModel):
     password: str
     is_active: bool = Field(default=True)
     is_admin: bool = Field(default=False)
+    
+    def __str__(self) -> str:
+        return str(self.id)
+
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True  # required for the _id
