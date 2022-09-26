@@ -1,14 +1,9 @@
 # shopping-cart
-Integração do banco MongoDB para o projeto shopping-cart do LuizaCode
+MongoDB database integration for LuizaCode's shopping-cart project
 
 ## libs
-* motor = Driver Python assíncrono para MongoDB
-* pydantic = Validação de dados para Python 
-
-## Environment
-| name_env | value |
-|------------|------------|
-|DATABASE_URI|connection string Atlas|
+* motor = Driver Python async for MongoDB
+* pydantic = Data validation for Python 
 
 ## Install
 * Create venv
@@ -27,8 +22,21 @@ Integração do banco MongoDB para o projeto shopping-cart do LuizaCode
      ```
      $ pip install -r requirements.txt
      ```
+* Connect mongodb
+  
+     ```´
+
+     $ create a .env file with your mongoDB connect string according to .env.example file 
+     ```
+     
+  
+     | name_env | value |
+     |------------|------------|
+     |DATABASE_URI|connection string Atlas|
+          
+
 * Run
   ```
-  $ python main.py
+  $ uvicorn main:app 
    ```
   
