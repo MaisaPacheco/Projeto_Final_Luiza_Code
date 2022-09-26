@@ -8,7 +8,8 @@ MongoDB database integration for LuizaCode's shopping-cart project
 ## Install
 * Create venv
     ```
-    $ virtualenv venv --python=3.10
+    At the terminal in the project's folder 
+    $ python -m venv venv
     ```
     Linux
     ```
@@ -18,6 +19,7 @@ MongoDB database integration for LuizaCode's shopping-cart project
     ```
     $ .\venv\Scripts\activate
    ```
+   After the the inserted command, it should appear the virtual environment name
 * Install requirements
      ```
      $ pip install -r requirements.txt
@@ -39,4 +41,10 @@ MongoDB database integration for LuizaCode's shopping-cart project
   ```
   $ uvicorn main:app 
    ```
+
+* How to test
+  ```
+  Open the cases test files and test the routes
+  Tip: you can install the "Rest Client" extension in the Visual Studio Code to run tests in the *.http files directly
+     ```
   
