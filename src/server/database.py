@@ -12,7 +12,9 @@ class DataBase:
     order_collection = None
     order_items_collection = None
 
+
 db = DataBase()
+
 
 async def connect_db():
     # conexao mongo, com no máximo 10 conexões async
@@ -28,6 +30,7 @@ async def connect_db():
     db.product_collection = db.client.shopping_cart.products
     db.order_collection = db.client.shopping_cart.orders
     db.order_items_collection = db.client.shopping_cart.order_items
+
 
 async def disconnect_db():
     db.client.close()
